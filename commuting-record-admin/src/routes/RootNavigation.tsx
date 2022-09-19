@@ -7,7 +7,14 @@ const RootNavigation = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<HomeContainer />} />
+        <Route path='/login' element={<HomeContainer />} />
+        <Route element={<HomeContainer />}>
+          <Route path='/worker' element={<HomeContainer />} />
+          <Route path='/request' element={<HomeContainer />} />
+          <Route path='/poor' element={<HomeContainer />} />
+          <Route path='/time' element={<HomeContainer />} />
+          <Route path='/birth' element={<HomeContainer />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

@@ -315,6 +315,7 @@ module.exports = function (webpackEnv) {
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         '@store': path.resolve(__dirname, '../src/store'),
         '@lib': path.resolve(__dirname, '../src/lib'),
+        '@assets': path.resolve(__dirname, '../src/assets'),
         '@hooks': path.resolve(__dirname, '../src/hooks'),
         '@typedef': path.resolve(__dirname, '../src/typedef'),
         '@components': path.resolve(__dirname, '../src/components'),

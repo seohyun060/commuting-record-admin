@@ -21,6 +21,7 @@
       "@components/*": ["src/components/*"],
       "@store/*": ["src/store/*"],
       "@lib/*": ["src/lib/*"],
+      "@assets/*": ["src/assets/*"],
       "@hooks/*": ["src/hooks/*"],
       "@typedef/*": ["src/typedef/*"]
     }
