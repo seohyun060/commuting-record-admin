@@ -1,0 +1,58 @@
+.gnb-root {
+  width: 240px;
+  height: calc(100vh - 100px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.gnb-root .admin-info-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px 0px;
+}
+.gnb-root .admin-info-wrapper .circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #767676;
+}
+.gnb-root .admin-info-wrapper .name {
+  width: 104px;
+  text-align: left;
+  color: #111111;
+  font-weight: bold;
+  font-size: 14px;
+}
+.gnb-root .gnb-item-wrapper {
+  margin-top: 30px;
+}
+.gnb-root .gnb-item-wrapper .tab-item-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px 30px;
+  height: 56px;
+  gap: 12px;
+}
+.gnb-root .gnb-item-wrapper .tab-item-container .square {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 149, 149, 0.34);
+}
+.gnb-root .gnb-item-wrapper .tab-item-container .tab-name {
+  color: #999999;
+}
+.gnb-root .gnb-item-wrapper .active {
+  background-color: #e5ecf2;
+  color: #018ad0;
+}
+.gnb-root .logout-button {
+  align-self: center;
+  background-color: #fff;
+  position: absolute;
+  bottom: 160px;
+  text-decoration: underline;
+  color: #767676;
+}/*# sourceMappingURL=gnb.style.css.map */
