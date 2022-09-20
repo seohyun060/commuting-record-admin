@@ -1,0 +1,12 @@
+.header-root {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  border-bottom: 1px solid #efeff2;
+}
+.header-root .title {
+  margin-left: 240px;
+  color: #111111;
+  font-size: 20px;
+  font-weight: bold;
+}/*# sourceMappingURL=header.style.css.map */

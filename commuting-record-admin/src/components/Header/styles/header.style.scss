@@ -1,0 +1,14 @@
+@import '../../../styles/color';
+
+.header-root {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  border-bottom: 1px solid $gray-200;
+  .title {
+    margin-left: 240px;
+    color: $gray-600;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
