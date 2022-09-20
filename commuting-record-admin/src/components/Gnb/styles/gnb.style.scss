@@ -6,6 +6,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  border-right: 1px solid $gray-200;
 
   .admin-info-wrapper {
     display: flex;

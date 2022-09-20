@@ -4,6 +4,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  border-right: 1px solid #efeff2;
 }
 .gnb-root .admin-info-wrapper {
   display: flex;
