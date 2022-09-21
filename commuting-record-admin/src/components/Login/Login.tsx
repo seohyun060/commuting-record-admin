@@ -19,48 +19,35 @@ function Login() {
   }, []);
 
   const onLogInClicked = useCallback(() => {
-    if (email !== '' && pw !== '') {
-      navigate('/Home');
-      setemail('');
-      setpw('');
-    }
+    navigate('/worker');
+    setemail('');
+    setpw('');
   }, [navigate]);
-
-  const onKeyPress = useCallback(
-    (e: any) => {
-      if (e.key === 'Enter') {
-        if (email !== '' && pw !== '') {
-          navigate('/Home');
-          setemail('');
-          setpw('');
-        }
-      }
-    },
-    [navigate],
-  );
 
   return (
     <div className='App'>
       <div className='Container'>
         <img src={logo}></img>
-        <input
-          className='Email'
-          placeholder='Email'
-          onChange={onChangeEmail}
-          onKeyPress={onKeyPress}
-          value={email}></input>
-        <input
-          className='Pw'
-          type='password'
-          onChange={onChangePw}
-          onKeyPress={onKeyPress}
-          value={pw}></input>
+        <form onSubmit={onLogInClicked}>
+          <input
+            className='Email'
+            placeholder='Email'
+            onChange={onChangeEmail}
+            required
+            value={email}></input>
+          <input
+            className='Pw'
+            type='password'
+            onChange={onChangePw}
+            required
+            value={pw}></input>
 
-        <img className='Auto' src={ic}></img>
-        <span>자동로그인</span>
-        <div>
-          <button onClick={onLogInClicked}>로그인</button>
-        </div>
+          <img className='Auto' src={ic}></img>
+          <span>자동로그인</span>
+          <div>
+            <button type='submit'>로그인</button>
+          </div>
+        </form>
       </div>
     </div>
   );
