@@ -2,7 +2,7 @@ import React from 'react';
 import { useCallback } from 'react';
 import logo from '../../assets/images/logo.png';
 import ic from '../../assets/images/ic.png';
-import './styles/Login.css';
+import './styles/Login.scss';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 function Login() {
@@ -23,6 +23,9 @@ function Login() {
     setemail('');
     setpw('');
   }, [navigate]);
+  useEffect(() => {
+    console.log(email, pw);
+  }, [email, pw]);
 
   return (
     <div className='App'>
@@ -41,12 +44,11 @@ function Login() {
             onChange={onChangePw}
             required
             value={pw}></input>
-
-          <img className='Auto' src={ic}></img>
-          <span>자동로그인</span>
-          <div>
-            <button type='submit'>로그인</button>
+          <div className='AutoContainer'>
+            <img className='Auto' src={ic}></img>
+            <span>자동로그인</span>
           </div>
+          <button type='submit'>로그인</button>
         </form>
       </div>
     </div>

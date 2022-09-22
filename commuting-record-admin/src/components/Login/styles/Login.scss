@@ -1,0 +1,88 @@
+@mixin font-setting($color, $bgcolor, $font-weight: normal) {
+  color: $color;
+  background-color: $bgcolor;
+  font-size: 16px;
+  font-family: Pretendard;
+  @if $font-weight != normal {
+    font-weight: $font-weight;
+  }
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 328px;
+  flex-wrap: wrap;
+}
+
+img {
+  width: 148px;
+  height: 148px;
+  margin: 276px 89px 30px 91px;
+  object-fit: contain;
+  justify-content: center;
+}
+
+.Email,
+.Pw {
+  width: 328px;
+  height: 54px;
+  @include font-setting(#767676, #efeff2);
+  padding-left: 16px;
+  padding-right: 16px;
+  text-align: left;
+  border-radius: 4px;
+  border-color: #efeff2;
+  margin-bottom: 12px;
+  border-style: none;
+}
+
+.Pw {
+  margin-bottom: 0px;
+}
+
+.AutoContainer {
+  display: flex;
+  width: 328px;
+  height: 56px;
+  align-items: center;
+}
+
+.Auto {
+  width: 24px;
+  height: 24px;
+  margin: 0px 8px 0px 0;
+  justify-self: flex-start;
+  display: inline;
+}
+
+span {
+  display: table-cell;
+  width: 90px;
+  height: 24px;
+  text-align: left;
+  margin: 0px 0px 0px 0px;
+  @include font-setting(#111, white);
+  line-height: 1.6;
+}
+
+button {
+  width: 328px;
+  height: 56px;
+  margin: 16px 0 0;
+  @include font-setting(#fff, #60bceb, 500);
+  border-radius: 4px;
+  border-style: none;
+}
