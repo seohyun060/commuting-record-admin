@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 type Props = {};
 
-const LoginContainer = (props: Props) => {
+const LoginContainer = ({}: Props) => {
   return (
     <div>
       <Login />
