@@ -2,17 +2,29 @@ import React from 'react';
 import { useCallback } from 'react';
 import logo from '../../assets/images/logo.png';
 import ic from '../../assets/images/ic.png';
+import icx from '../../assets/images/icx.png';
+
 import './styles/Login.scss';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 function Login() {
   const [email, setemail] = useState('');
+  const [color, setcolor] = useState('#767676');
   const navigate = useNavigate();
-
+  const [toggle, settoggle] = useState(false);
   const [pw, setpw] = useState('');
   const onChangeEmail = useCallback((e: any) => {
     setemail(e.target.value);
   }, []);
+
+  const onToggle = () => {
+    settoggle((prev) => !prev);
+    if (color === '#767676') {
+      setcolor('#111');
+    } else {
+      setcolor('#767676');
+    }
+  };
 
   const onChangePw = useCallback((e: any) => {
     setpw(e.target.value);
@@ -45,8 +57,14 @@ function Login() {
             required
             value={pw}></input>
           <div className='AutoContainer'>
-            <img className='Auto' src={ic}></img>
-            <span>자동로그인</span>
+            <div>
+              {!toggle ? (
+                <img className='Auto' onClick={onToggle} src={icx}></img>
+              ) : (
+                <img className='Auto' onClick={onToggle} src={ic}></img>
+              )}
+            </div>
+            <span style={{ color: color }}>자동로그인</span>
           </div>
           <button type='submit'>로그인</button>
         </form>
