@@ -1,0 +1,17 @@
+.entire {
+  width: 1920px;
+  height: 1080px;
+  .time {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1920px;
+    height: 980px;
+    &-container {
+      align-items: center;
+      // justify-content: center;
+      width: 1680px;
+      height: 980px;
+      background-color: #f8f8fa;
+    }
+  }
+}
