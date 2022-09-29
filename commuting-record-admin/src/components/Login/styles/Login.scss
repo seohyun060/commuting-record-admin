@@ -17,15 +17,15 @@
   border-style: none;
 }
 
-.App {
+.login {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.Container {
-  @extend .App;
+.container {
+  @extend .login;
   width: 328px;
   flex-wrap: wrap;
   button {
@@ -45,7 +45,7 @@ img {
   justify-content: center;
 }
 
-.Email {
+.email {
   width: 328px;
   height: 54px;
   @include font-setting(#767676, #efeff2);
@@ -56,17 +56,17 @@ img {
   margin-bottom: 12px;
 }
 
-.Pw {
-  @extend .Email;
+.password {
+  @extend .email;
   margin-bottom: 0px;
 }
 
-.AutoContainer {
+.auto-container {
   display: flex;
   width: 328px;
   height: 56px;
   align-items: center;
-  .Auto {
+  .auto {
     width: 24px;
     height: 24px;
     margin: 0px 8px 0px 0;

@@ -7,61 +7,62 @@ import icx from '../../assets/images/icx.png';
 import './styles/Login.scss';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 function Login() {
-  const [email, setemail] = useState('');
-  const [color, setcolor] = useState('#767676');
+  const [email, setEmail] = useState('');
+  const [color, setColor] = useState('#767676');
   const navigate = useNavigate();
-  const [toggle, settoggle] = useState(false);
-  const [pw, setpw] = useState('');
-  const onChangeEmail = useCallback((e: any) => {
-    setemail(e.target.value);
+  const [toggle, setToggle] = useState(false);
+  const [password, setPassword] = useState('');
+  const onChangeEmail = useCallback((e: ChangeEvent) => {
+    setEmail(e.target.value);
   }, []);
 
   const onToggle = () => {
-    settoggle((prev) => !prev);
+    setToggle((prev) => !prev);
     if (color === '#767676') {
-      setcolor('#111');
+      setColor('#111');
     } else {
-      setcolor('#767676');
+      setColor('#767676');
     }
   };
 
-  const onChangePw = useCallback((e: any) => {
-    setpw(e.target.value);
+  const onChangePassword = useCallback((e: ChangeEvent) => {
+    setPassword(e.target.value);
   }, []);
 
   const onLogInClicked = useCallback(() => {
     navigate('/worker');
-    setemail('');
-    setpw('');
+    setEmail('');
+    setPassword('');
   }, [navigate]);
   useEffect(() => {
-    console.log(email, pw);
-  }, [email, pw]);
+    console.log(email, password);
+  }, [email, password]);
 
   return (
-    <div className='App'>
-      <div className='Container'>
+    <div className='login'>
+      <div className='container'>
         <img src={logo}></img>
         <form onSubmit={onLogInClicked}>
           <input
-            className='Email'
+            className='email'
             placeholder='Email'
             onChange={onChangeEmail}
             required
             value={email}></input>
           <input
-            className='Pw'
+            className='password'
             type='password'
-            onChange={onChangePw}
+            onChange={onChangePassword}
             required
-            value={pw}></input>
-          <div className='AutoContainer'>
+            value={password}></input>
+          <div className='auto-container'>
             <div>
               {!toggle ? (
-                <img className='Auto' onClick={onToggle} src={icx}></img>
+                <img className='auto' onClick={onToggle} src={icx}></img>
               ) : (
-                <img className='Auto' onClick={onToggle} src={ic}></img>
+                <img className='auto' onClick={onToggle} src={ic}></img>
               )}
             </div>
             <span style={{ color: color }}>자동로그인</span>
