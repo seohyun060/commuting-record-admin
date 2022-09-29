@@ -1,4 +1,4 @@
-.Rqitem {
+.request-item {
   display: flex;
   width: 1618px;
   height: 56px;
@@ -16,27 +16,27 @@
   text-align: left;
   color: #111;
   z-index: 500;
-  &Name {
+  &-name {
     width: 110px;
     margin-left: 258px;
   }
-  &NickName {
+  &-nickname {
     width: 110px;
     margin-left: 80px;
   }
-  &RType {
+  &-type {
     width: 110px;
     margin-left: 80px;
   }
-  &RTime {
+  &-time {
     width: 140px;
     margin-left: 81px;
   }
-  &Rdate {
+  &-date {
     width: 180px;
     margin-left: 80px;
   }
-  &RState {
+  &-state {
     width: 52px;
     margin-left: 80px;
     text-align: center;

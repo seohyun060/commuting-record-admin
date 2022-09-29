@@ -36,7 +36,7 @@ const Request = ({
   requestItems,
   totalPosts,
 }: Props) => {
-  const [clickeditem, setclickeditem] = useState({
+  const [clickedItem, setClickedItem] = useState({
     name: '',
     nickName: '',
     rType: '',
@@ -46,20 +46,20 @@ const Request = ({
   });
 
   const onRequestItemClick = (requestItem: RequestData) => {
-    setclickeditem(requestItem);
+    setClickedItem(requestItem);
   };
 
   return (
-    <div className='Entire'>
+    <div className='entire'>
       {toggle && (
-        <RequestPopContainer settoggle={settoggle} clickeditem={clickeditem} />
+        <RequestPopContainer settoggle={settoggle} clickeditem={clickedItem} />
       )}
 
       <Header title='요청 관리' />
-      <div className='Request'>
+      <div className='request'>
         <GnbContainer tab='RequestManagement' />
 
-        <div className='rqitem-container'>
+        <div className='request-item-container'>
           <div className='search-container'>
             <div className='input-box'>
               <input
@@ -77,14 +77,14 @@ const Request = ({
               <span>2022.08.21(월)~2022.08.27(일)</span>
             </div>
           </div>
-          <div className='rqitem-list'>
-            <div className='rqitem-list-header'>
-              <div className='Name'>근로자명</div>
-              <div className='NickName'>닉네임</div>
-              <div className='RType'>요청 종류</div>
-              <div className='RTime'>조정 시간</div>
-              <div className='RDate'>적용 날짜</div>
-              <div className='RState'>상태</div>
+          <div className='request-item-list'>
+            <div className='request-item-list-header'>
+              <div className='name'>근로자명</div>
+              <div className='nickname'>닉네임</div>
+              <div className='type'>요청 종류</div>
+              <div className='time'>조정 시간</div>
+              <div className='date'>적용 날짜</div>
+              <div className='state'>상태</div>
             </div>
             {requestItems
               .filter(
@@ -100,7 +100,7 @@ const Request = ({
                 />
               ))}
           </div>
-          <div className='Pagination'>
+          <div className='pagination'>
             <PaginationContainer
               totalPosts={totalPosts}
               setCurrentPage={setCurrentPage}

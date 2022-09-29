@@ -12,11 +12,11 @@
   margin-left: $margin-left;
   width: $width;
 }
-.Entire {
+.entire {
   width: 1920px;
   height: 1080px;
 }
-.Request {
+.request {
   display: flex;
   flex-wrap: wrap;
   width: 1920px;
@@ -30,7 +30,7 @@
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 980;
 }
-.rqitem-container {
+.request-item-container {
   align-items: center;
   // justify-content: center;
   width: 1680px;
@@ -98,7 +98,7 @@
       }
     }
   }
-  .rqitem-list {
+  .request-item-list {
     margin: 0px 30px 0px 0px;
     width: 1680px;
     height: 784px;
@@ -114,27 +114,27 @@
       height: 56px;
       border: solid 1px #efeff2;
       background-color: white;
-      .Name {
+      .name {
         @include margin-setting(258px, 110px);
       }
-      .NickName {
+      .nickname {
         @include margin-setting(80px, 110px);
       }
-      .RType {
+      .type {
         @include margin-setting(80px, 110px);
       }
-      .RTime {
+      .time {
         @include margin-setting(81px, 140px);
       }
-      .RDate {
+      .date {
         @include margin-setting(80px, 180px);
       }
-      .RState {
+      .state {
         @include margin-setting(85px, 52px);
       }
     }
   }
-  .Pagination {
+  .pagination {
     width: 310px;
     margin: 30px 0px 30px 695px;
   }

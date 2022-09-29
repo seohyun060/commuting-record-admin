@@ -30,14 +30,14 @@ const RequestItem = ({
 
   return (
     <div className='pop-and-rqitem'>
-      <div className='Rqitem' onClick={onToggle}>
-        <div className='RqitemName'>{requestItem.name}</div>
-        <div className='RqitemNickName'>{requestItem.nickName}</div>
-        <div className='RqitemRType'>{requestItem.rType}</div>
-        <div className='RqitemRTime'>{requestItem.rTime}</div>
-        <div className='RqitemRdate'>{requestItem.rdate}</div>
+      <div className='request-item' onClick={onToggle}>
+        <div className='request-item-name'>{requestItem.name}</div>
+        <div className='request-item-nickname'>{requestItem.nickName}</div>
+        <div className='request-item-type'>{requestItem.rType}</div>
+        <div className='request-item-time'>{requestItem.rTime}</div>
+        <div className='request-item-date'>{requestItem.rdate}</div>
         <div
-          className='RqitemRState'
+          className='request-item-state'
           style={{
             color: color,
             backgroundColor: backgroundColor,
