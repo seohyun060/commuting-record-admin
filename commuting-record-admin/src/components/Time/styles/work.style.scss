@@ -1,0 +1,44 @@
+@mixin font-style($font-weight, $font-size, $line-height) {
+  font-family: Pretendard;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: $line-height;
+  letter-spacing: normal;
+  text-align: left;
+}
+.work {
+  width: 151px;
+  height: 133.3px;
+  background-color: #efeff2;
+  display: flex;
+  flex-wrap: wrap;
+  border-style: solid;
+  border-bottom-width: 1px;
+
+  border-color: #e6e6e6;
+  &-header {
+    width: 151px;
+    height: 17px;
+    margin-top: 12px;
+    @include font-style(normal, 14px, normal);
+    text-align: center;
+  }
+  &-remain {
+    margin: 52px 8px 0px 61px;
+
+    color: #018ad0;
+    width: 80px;
+    height: 17px;
+
+    @include font-style(500, 14px, 1.29);
+  }
+  &-total {
+    width: 90px;
+    height: 17px;
+    margin-left: 51px;
+    margin-bottom: 8px;
+    @include font-style(500, 14px, 1.29);
+  }
+}

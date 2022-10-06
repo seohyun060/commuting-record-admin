@@ -1,3 +1,13 @@
+@mixin font-style($font-weight, $font-size, $line-height) {
+  font-family: Pretendard;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: $line-height;
+  letter-spacing: normal;
+  text-align: left;
+}
 .entire {
   width: 1920px;
   height: 1080px;
@@ -8,10 +18,70 @@
     height: 980px;
     &-container {
       align-items: center;
-      // justify-content: center;
       width: 1680px;
       height: 980px;
       background-color: #f8f8fa;
+      .month-container {
+        width: 228px;
+        height: 28px;
+        margin-top: 79px;
+        margin-left: 30px;
+        display: flex;
+        justify-content: space-between;
+        @include font-style(bold, 22px, normal);
+        button {
+          width: 28px;
+          height: 28px;
+          background-color: #f8f8fa;
+          font-weight: bold;
+          font-size: 18px;
+        }
+      }
+      .calendar {
+        width: 1208px;
+        height: 800px;
+        margin-top: 44px;
+        margin-left: 30px;
+        display: flex;
+        &-days {
+          width: 1057px;
+          height: 800px;
+          .week {
+            height: 29px;
+            display: flex;
+            background-color: white;
+            .weekday {
+              @include font-style(normal, 14px, 1);
+              width: 151px;
+              border-style: solid;
+              border-width: 1px 1px 0px 0px;
+              color: #767676;
+              border-color: #e6e6e6;
+              text-align: center;
+              div {
+                margin-top: 12px;
+              }
+            }
+            .sunday {
+              @extend .weekday;
+              border-width: 1px 1px 0px 1px;
+              color: #eb5351;
+            }
+            .saturday {
+              @extend .weekday;
+              color: #515deb;
+            }
+          }
+          .days {
+            width: 1057px;
+            height: 763px;
+          }
+        }
+        &-work {
+          width: 151px;
+          height: 800px;
+        }
+      }
     }
   }
 }
