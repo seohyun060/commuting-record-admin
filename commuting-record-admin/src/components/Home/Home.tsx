@@ -8,7 +8,7 @@ const Home = (props: Props) => {
   return (
     <div>
       <Header title='근로자 관리' />
-      <GnbContainer tab='BirthDay' />
+      <GnbContainer tab='WorkerManagement' />
     </div>
   );
 };
