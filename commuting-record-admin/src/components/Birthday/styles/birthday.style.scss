@@ -1,0 +1,64 @@
+@mixin font-style($font-weight, $font-size, $line-height) {
+  font-family: Pretendard;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: $line-height;
+  letter-spacing: normal;
+  text-align: left;
+}
+@mixin margin-setting($margin-left, $width) {
+  margin-left: $margin-left;
+  width: $width;
+}
+.entire {
+  width: 1920px;
+  height: 1080px;
+}
+.birthday {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1920px;
+  height: 980px;
+}
+
+.birthday-item-container {
+  align-items: center;
+  // justify-content: center;
+  width: 1680px;
+  height: 980px;
+  background-color: #f8f8fa;
+
+  .birthday-item-list {
+    margin: 30px 30px 0px 0px;
+    width: 1680px;
+    height: 784px;
+    &-header {
+      @include font-style(bold, 18px, 1.78);
+
+      color: #767676;
+
+      margin-left: 30px;
+      display: flex;
+      align-items: center;
+      width: 1618px;
+      height: 56px;
+      border: solid 1px #efeff2;
+      background-color: white;
+      .name {
+        @include margin-setting(507px, 110px);
+      }
+      .nickname {
+        @include margin-setting(80px, 110px);
+      }
+      .birthday-date {
+        @include margin-setting(80px, 115px);
+      }
+    }
+  }
+  .pagination {
+    width: 310px;
+    margin: 48px 0px 30px 695px;
+  }
+}
