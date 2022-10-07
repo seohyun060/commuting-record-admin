@@ -1,23 +1,16 @@
 import GnbContainer from '@components/Gnb/containers/GnbContainer';
 import Header from '@components/Header/Header';
 import React from 'react';
-import './styles/birthday.style.scss';
+import './styles/birthday.style.css';
 import ic_search from '../../assets/images/ic_search.png';
 import { useState } from 'react';
 
-import BirthdayItemContainer from './containers/containers/BirthdayItemContainer';
+import BirthdayItemContainer from './containers/BirthdayItemContainer';
 import PaginationContainer from '../common/Pagination/container/PaginationContainer';
 
-import type {
-  SetStateNumber,
-  EFunction,
-} from '../../typedef/components/Request/request.types';
+import type { SetStateNumber } from '../../typedef/common/common.types';
+import type { BirthdayData } from '../../typedef/components/Birthday/birthday.types';
 
-type BirthdayData = {
-  name: string;
-  nickname: string;
-  birthday: string;
-};
 type Props = {
   currentPage: number;
   setCurrentPage: SetStateNumber;

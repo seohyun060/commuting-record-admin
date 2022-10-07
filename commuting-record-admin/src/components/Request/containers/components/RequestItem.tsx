@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import '../../styles/requestitem.style.scss';
+import '../../styles/requestitem.style.css';
 
 import type {
   RequestData,

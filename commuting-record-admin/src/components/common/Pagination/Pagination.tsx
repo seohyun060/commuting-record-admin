@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import './styles/Pagination.scss';
+import './styles/Pagination.css';
 import type { SetStateNumber } from '@typedef/components/Request/request.types';
 type Props = {
   totalPosts: number;

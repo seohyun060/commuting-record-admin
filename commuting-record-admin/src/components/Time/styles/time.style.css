@@ -1,0 +1,89 @@
+.entire {
+  width: 1920px;
+  height: 1080px;
+}
+.entire .time {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1920px;
+  height: 980px;
+}
+.entire .time-container {
+  align-items: center;
+  width: 1680px;
+  height: 980px;
+  background-color: #f8f8fa;
+}
+.entire .time-container .month-container {
+  width: 228px;
+  height: 28px;
+  margin-top: 79px;
+  margin-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+}
+.entire .time-container .month-container button {
+  width: 28px;
+  height: 28px;
+  background-color: #f8f8fa;
+  font-weight: bold;
+  font-size: 18px;
+}
+.entire .time-container .calendar {
+  width: 1208px;
+  height: 800px;
+  margin-top: 44px;
+  margin-left: 30px;
+  display: flex;
+}
+.entire .time-container .calendar-days {
+  width: 1057px;
+  height: 800px;
+}
+.entire .time-container .calendar-days .week {
+  height: 29px;
+  display: flex;
+  background-color: white;
+}
+.entire .time-container .calendar-days .week .weekday, .entire .time-container .calendar-days .week .saturday, .entire .time-container .calendar-days .week .sunday {
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  width: 151px;
+  border-style: solid;
+  border-width: 1px 1px 0px 0px;
+  color: #767676;
+  border-color: #e6e6e6;
+  text-align: center;
+}
+.entire .time-container .calendar-days .week .weekday div, .entire .time-container .calendar-days .week .saturday div, .entire .time-container .calendar-days .week .sunday div {
+  margin-top: 12px;
+}
+.entire .time-container .calendar-days .week .sunday {
+  border-width: 1px 1px 0px 1px;
+  color: #eb5351;
+}
+.entire .time-container .calendar-days .week .saturday {
+  color: #515deb;
+}
+.entire .time-container .calendar-days .days {
+  width: 1057px;
+  height: 763px;
+}
+.entire .time-container .calendar-work {
+  width: 151px;
+  height: 800px;
+}/*# sourceMappingURL=time.style.css.map */

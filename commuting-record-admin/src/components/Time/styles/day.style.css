@@ -1,0 +1,35 @@
+.day {
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  width: 151px;
+  text-align: center;
+  background-color: white;
+  float: left;
+  border-style: solid;
+  border-color: #e6e6e6;
+}
+.day-number {
+  margin-top: 8px;
+}
+.day-time {
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  text-align: left;
+  text-align: center;
+  width: 135px;
+  margin-left: 8px;
+  margin-top: 16px;
+  height: 32px;
+  border-radius: 2px;
+}/*# sourceMappingURL=day.style.css.map */

@@ -1,11 +1,11 @@
 import GnbContainer from '@components/Gnb/containers/GnbContainer';
 import Header from '@components/Header/Header';
 import React from 'react';
-import './styles/request.style.scss';
+import './styles/request.style.css';
 import ic_search from '../../assets/images/ic_search.png';
 import { useState } from 'react';
-import RequestPopContainer from './containers/containers/RequestPopContainer';
-import RequestItemContainer from './containers/containers/RequestItemContainer';
+import RequestPopContainer from './containers/RequestPopContainer';
+import RequestItemContainer from './containers/RequestItemContainer';
 import PaginationContainer from '../common/Pagination/container/PaginationContainer';
 
 import type {

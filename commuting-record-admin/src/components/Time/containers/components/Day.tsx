@@ -1,11 +1,8 @@
 import React from 'react';
 import { useEffect } from 'react';
-import '../../styles/day.style.scss';
-type Days = {
-  day: number;
-  now: boolean;
-  time: number;
-};
+import '../../styles/day.style.css';
+import type { Days } from '../../../../typedef/components/Time/time.types';
+
 type Props = {
   dayColor: string;
   timeColor?: string;

@@ -1,5 +1,5 @@
 import React from 'react';
-import RequestPop from '../components/RequestPop';
+import RequestPop from './components/RequestPop';
 import { useState } from 'react';
 import type {
   SetStateBoolean,

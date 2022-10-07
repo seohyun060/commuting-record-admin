@@ -1,0 +1,89 @@
+.login, .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 328px;
+  flex-wrap: wrap;
+}
+.container button {
+  width: 328px;
+  height: 56px;
+  margin: 16px 0 0;
+  color: #fff;
+  background-color: #60bceb;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  border-radius: 4px;
+  border-style: none;
+}
+
+img {
+  width: 148px;
+  height: 148px;
+  margin: 276px 89px 30px 91px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  justify-content: center;
+}
+
+.email, .password {
+  width: 328px;
+  height: 54px;
+  color: #767676;
+  background-color: #efeff2;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  border-radius: 4px;
+  border-style: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.password {
+  margin-bottom: 0px;
+}
+
+.auto-container {
+  display: flex;
+  width: 328px;
+  height: 56px;
+  align-items: center;
+}
+.auto-container .auto {
+  width: 24px;
+  height: 24px;
+  margin: 0px 8px 0px 0;
+  justify-self: flex-start;
+  display: inline;
+}
+.auto-container span {
+  display: table-cell;
+  width: 90px;
+  height: 24px;
+  text-align: left;
+  margin: 0px 0px 0px 0px;
+  color: #111;
+  background-color: white;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  line-height: 1.5;
+}/*# sourceMappingURL=Login.css.map */

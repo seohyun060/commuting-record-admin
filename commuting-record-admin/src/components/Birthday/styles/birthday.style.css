@@ -1,0 +1,57 @@
+.entire {
+  width: 1920px;
+  height: 1080px;
+}
+
+.birthday {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1920px;
+  height: 980px;
+}
+
+.birthday-item-container {
+  align-items: center;
+  width: 1680px;
+  height: 980px;
+  background-color: #f8f8fa;
+}
+.birthday-item-container .birthday-item-list {
+  margin: 30px 30px 0px 0px;
+  width: 1680px;
+  height: 784px;
+}
+.birthday-item-container .birthday-item-list-header {
+  font-family: Pretendard;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.78;
+  letter-spacing: normal;
+  text-align: left;
+  color: #767676;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  width: 1618px;
+  height: 56px;
+  border: solid 1px #efeff2;
+  background-color: white;
+}
+.birthday-item-container .birthday-item-list-header .name {
+  margin-left: 507px;
+  width: 110px;
+}
+.birthday-item-container .birthday-item-list-header .nickname {
+  margin-left: 80px;
+  width: 110px;
+}
+.birthday-item-container .birthday-item-list-header .birthday-date {
+  margin-left: 80px;
+  width: 115px;
+}
+.birthday-item-container .pagination {
+  width: 310px;
+  margin: 48px 0px 30px 695px;
+}/*# sourceMappingURL=birthday.style.css.map */

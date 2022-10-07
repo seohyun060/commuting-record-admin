@@ -1,0 +1,35 @@
+.unsatisfied-item {
+  display: flex;
+  width: 1618px;
+  height: 56px;
+  margin-left: 30px;
+  align-items: center;
+  border: solid 1px #efeff2;
+  background-color: white;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #111;
+  z-index: 500;
+}
+.unsatisfied-item-name {
+  margin-left: 406px;
+  width: 110px;
+}
+.unsatisfied-item-nickname {
+  margin-left: 80px;
+  width: 110px;
+}
+.unsatisfied-item-worktime {
+  margin-left: 80px;
+  width: 224px;
+}
+.unsatisfied-item-lefttime {
+  margin-left: 80px;
+  width: 140px;
+}/*# sourceMappingURL=unsatisfieditem.style.css.map */

@@ -1,13 +1,8 @@
 import React, { useMemo } from 'react';
 import Unsatisfied from '../Unsatisfied';
 import { useState, useEffect, useCallback } from 'react';
-import type { EChange } from '../../../typedef/components/Request/request.types';
-type UnsatisfiedData = {
-  name: string;
-  nickname: string;
-  worktime: string;
-  lefttime: string;
-};
+import type { EChange } from '../../../typedef/common/common.types';
+import type { UnsatisfiedData } from '../../../typedef/components/Unsatisfied/unsatisfied.types';
 
 const UnsatisfiedContainer = () => {
   const [search, setsearch] = useState('');

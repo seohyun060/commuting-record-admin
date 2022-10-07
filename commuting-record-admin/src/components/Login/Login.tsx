@@ -4,30 +4,30 @@ import logo from '../../assets/images/logo.png';
 import ic from '../../assets/images/ic.png';
 import icx from '../../assets/images/icx.png';
 
-import './styles/Login.scss';
+import './styles/Login.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+import type { EChange } from '../../typedef/common/common.types';
 function Login() {
   const [email, setEmail] = useState('');
   const [color, setColor] = useState('#767676');
-  const navigate = useNavigate();
   const [toggle, setToggle] = useState(false);
   const [password, setPassword] = useState('');
-  const onChangeEmail = useCallback((e: ChangeEvent) => {
+  const navigate = useNavigate();
+  const onChangeEmail = useCallback((e: EChange) => {
     setEmail(e.target.value);
   }, []);
 
-  const onToggle = () => {
+  const onToggle = useCallback(() => {
     setToggle((prev) => !prev);
     if (color === '#767676') {
       setColor('#111');
     } else {
       setColor('#767676');
     }
-  };
+  }, []);
 
-  const onChangePassword = useCallback((e: ChangeEvent) => {
+  const onChangePassword = useCallback((e: EChange) => {
     setPassword(e.target.value);
   }, []);
 

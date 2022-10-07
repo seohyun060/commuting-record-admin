@@ -1,0 +1,28 @@
+.Paginate {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-family: Pretendard;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.13;
+  letter-spacing: normal;
+  text-align: left;
+}
+.Paginate .Number {
+  width: 32px;
+  height: 32px;
+  background-color: #f8f8fa;
+  border-radius: 6px;
+}
+.Paginate .Move {
+  width: 32px;
+  height: 32px;
+  font-weight: bolder;
+  border-radius: 6px;
+}
+.Paginate span {
+  font-size: 15px;
+  font-weight: lighter;
+}/*# sourceMappingURL=Pagination.css.map */

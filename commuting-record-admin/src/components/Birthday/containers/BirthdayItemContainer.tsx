@@ -1,10 +1,6 @@
 import React from 'react';
-import BirthdayItem from '../components/BirthdayItem';
-type BirthdayData = {
-  name: string;
-  nickname: string;
-  birthday: string;
-};
+import BirthdayItem from './components/BirthdayItem';
+import type { BirthdayData } from '../../../typedef/components/Birthday/birthday.types';
 
 type Props = {
   birthdayItem: BirthdayData;

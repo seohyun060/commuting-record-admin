@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/rejectpop.style.scss';
+import '../../styles/rejectpop.style.css';
 import ic_close from '../../../../assets/images/ic_close.png';
 import { useState } from 'react';
 

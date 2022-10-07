@@ -1,12 +1,7 @@
 import React from 'react';
-import UnsatisfiedItem from '../components/UnsatisfiedItem';
+import UnsatisfiedItem from './components/UnsatisfiedItem';
+import type { UnsatisfiedData } from '../../../typedef/components/Unsatisfied/unsatisfied.types';
 
-type UnsatisfiedData = {
-  name: string;
-  nickname: string;
-  worktime: string;
-  lefttime: string;
-};
 type Props = {
   unsatisfiedItem: UnsatisfiedData;
 };

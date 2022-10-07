@@ -1,5 +1,5 @@
 import React from 'react';
-import RequestItem from '../components/RequestItem';
+import RequestItem from './components/RequestItem';
 import type {
   RequestData,
   SetStateBoolean,

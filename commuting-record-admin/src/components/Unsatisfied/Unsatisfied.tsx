@@ -1,23 +1,19 @@
 import GnbContainer from '@components/Gnb/containers/GnbContainer';
 import Header from '@components/Header/Header';
 import React from 'react';
-import './styles/unsatisfied.style.scss';
+import './styles/unsatisfied.style.css';
 import ic_search from '../../assets/images/ic_search.png';
 import { useState } from 'react';
 
-import UnsatisfiedItemContainer from './containers/containers/UnSatisfiedItemContainer';
+import UnsatisfiedItemContainer from './containers/UnSatisfiedItemContainer';
 import PaginationContainer from '../common/Pagination/container/PaginationContainer';
 
 import type {
   SetStateNumber,
   EFunction,
-} from '../../typedef/components/Request/request.types';
-type UnsatisfiedData = {
-  name: string;
-  nickname: string;
-  worktime: string;
-  lefttime: string;
-};
+} from '../../typedef/common/common.types';
+import type { UnsatisfiedData } from '../../typedef/components/Unsatisfied/unsatisfied.types';
+
 type Props = {
   search: string;
   onSearch: EFunction;

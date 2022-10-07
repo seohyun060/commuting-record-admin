@@ -1,12 +1,8 @@
 import React from 'react';
 import Birthday from '../Birthday';
 import { useState, useEffect, useCallback } from 'react';
-import type { EChange } from '../../../typedef/components/Request/request.types';
-type BirthdayData = {
-  name: string;
-  nickname: string;
-  birthday: string;
-};
+import type { BirthdayData } from '../../../typedef/components/Birthday/birthday.types';
+
 const BirthdayContainer = () => {
   const [currentPage, setCurrentPage] = useState(1);
 

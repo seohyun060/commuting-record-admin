@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
-import '../../styles/requestpop.style.scss';
+import '../../styles/requestpop.style.css';
 import ic_close from '../../../../assets/images/ic_close.png';
 import RejectPop from './RejectPop';
 import { useState } from 'react';
@@ -7,7 +7,7 @@ import type {
   SetStateBoolean,
   RequestData,
 } from '@typedef/components/Request/request.types';
-import RejectPopContainer from '../containers/RejectPopContainer';
+import RejectPopContainer from '../RejectPopContainer';
 type Props = {
   settoggle: SetStateBoolean;
   clickeditem: RequestData;

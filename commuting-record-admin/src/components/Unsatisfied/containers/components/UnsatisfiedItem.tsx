@@ -1,12 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import '../../styles/unsatisfieditem.style.scss';
+import '../../styles/unsatisfieditem.style.css';
+import type { UnsatisfiedData } from '../../../../typedef/components/Unsatisfied/unsatisfied.types';
 
-type UnsatisfiedData = {
-  name: string;
-  nickname: string;
-  worktime: string;
-  lefttime: string;
-};
 type Props = {
   unsatisfiedItem: UnsatisfiedData;
 };

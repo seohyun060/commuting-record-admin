@@ -1,16 +1,11 @@
 import GnbContainer from '@components/Gnb/containers/GnbContainer';
 import Header from '@components/Header/Header';
 import React from 'react';
-import './styles/time.style.scss';
+import './styles/time.style.css';
 import { useState, useEffect, useCallback } from 'react';
-import DayContainer from './containers/containers/DayContainer';
-import WorkContainer from './containers/containers/WorkContainer';
-import Work from './containers/components/Work';
-type Days = {
-  day: number;
-  now: boolean;
-  time: number;
-};
+import DayContainer from './containers/DayContainer';
+import WorkContainer from './containers/WorkContainer';
+import type { Days } from '../../typedef/components/Time/time.types';
 
 type Props = {
   prevMonth: () => void;

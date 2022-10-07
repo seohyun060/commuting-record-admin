@@ -1,11 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import '../../styles/birthdayitem.style.scss';
+import '../../styles/birthdayitem.style.css';
+import type { BirthdayData } from '../../../../typedef/components/Birthday/birthday.types';
 
-type BirthdayData = {
-  name: string;
-  nickname: string;
-  birthday: string;
-};
 type Props = {
   birthdayItem: BirthdayData;
 };

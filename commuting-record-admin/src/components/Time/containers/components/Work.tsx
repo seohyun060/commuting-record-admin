@@ -1,5 +1,6 @@
 import React from 'react';
-import '../../styles/work.style.scss';
+import '../../styles/work.style.css';
+
 type Props = {
   weekWork: number;
   index: number;
