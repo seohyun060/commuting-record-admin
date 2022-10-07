@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Unsatisfied from '../Unsatisfied';
 import { useState, useEffect, useCallback } from 'react';
 import type { EChange } from '../../../typedef/components/Request/request.types';
@@ -8,9 +8,11 @@ type UnsatisfiedData = {
   worktime: string;
   lefttime: string;
 };
+
 const UnsatisfiedContainer = () => {
   const [search, setsearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const lastIndex = useMemo(() => currentPage * 13, [currentPage]);
 
   const indexOfLast = currentPage * 13;
   const indexOfFirst = indexOfLast - 13;

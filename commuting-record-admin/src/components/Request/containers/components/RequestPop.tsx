@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import '../../styles/requestpop.style.scss';
 import ic_close from '../../../../assets/images/ic_close.png';
 import RejectPop from './RejectPop';
@@ -21,9 +21,10 @@ const RequestPop = ({ settoggle, clickeditem, vacation, timeCheck }: Props) => {
   };
 
   const [rejectToggle, setRejectToggle] = useState(false);
-  const onRejectToggle = () => {
+  const onRejectToggle = useCallback(() => {
     setRejectToggle((prev) => !prev);
-  };
+  }, []);
+
   return (
     <div className='container-background'>
       <div className='pop-container'>

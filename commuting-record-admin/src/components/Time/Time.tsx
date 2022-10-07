@@ -41,7 +41,7 @@ const Time = ({
         <GnbContainer tab='TimeReconciliation' />
         <div className='time-container'>
           <div className='month-container'>
-            <button onClick={prevMonth}>{left}</button>
+            <button onClick={prevMonth}>{'<'}</button>
             {selectedYear}년 {selectedMonth}월
             <button onClick={nextMonth}>{right}</button>
           </div>
