@@ -3,6 +3,7 @@ import LoginContainer from '@components/Login/containers/LoginContainer';
 import React from 'react';
 import { Route, Routes } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
+import UnsatisfiedContainer from '@components/Unsatisfied/containers/UnsatisfiedContainer';
 import RequestContainer from '@components/Request/containers/RequestContainer';
 
 const RootNavigation = () => {
@@ -12,7 +13,7 @@ const RootNavigation = () => {
         <Route path='/login' element={<LoginContainer />} />
         <Route path='/worker' element={<HomeContainer />} />
         <Route path='/request' element={<HomeContainer />} />
-        <Route path='/unsatisfy' element={<HomeContainer />} />
+        <Route path='/unsatisfy' element={<UnsatisfiedContainer />} />
         <Route path='/time' element={<HomeContainer />} />
         <Route path='/birthday' element={<HomeContainer />} />
       </Routes>
