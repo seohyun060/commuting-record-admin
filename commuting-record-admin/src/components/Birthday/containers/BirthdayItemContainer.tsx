@@ -7,11 +7,7 @@ type Props = {
 };
 
 const BirthdayItemContainer = ({ birthdayItem }: Props) => {
-  return (
-    <div>
-      <BirthdayItem birthdayItem={birthdayItem} />
-    </div>
-  );
+  return <BirthdayItem birthdayItem={birthdayItem} />;
 };
 
 export default BirthdayItemContainer;

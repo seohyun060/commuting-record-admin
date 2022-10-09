@@ -5,11 +5,7 @@ import { useState, useEffect } from 'react';
 type Props = {};
 
 const LoginContainer = ({}: Props) => {
-  return (
-    <div>
-      <Login />
-    </div>
-  );
+  return <Login />;
 };
 
 export default LoginContainer;

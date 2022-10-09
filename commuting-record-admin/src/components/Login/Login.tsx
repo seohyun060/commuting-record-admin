@@ -14,6 +14,7 @@ function Login() {
   const [toggle, setToggle] = useState(false);
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+
   const onChangeEmail = useCallback((e: EChange) => {
     setEmail(e.target.value);
   }, []);
@@ -36,6 +37,7 @@ function Login() {
     setEmail('');
     setPassword('');
   }, [navigate]);
+
   useEffect(() => {
     console.log(email, password);
   }, [email, password]);

@@ -7,11 +7,7 @@ type Props = {
 };
 
 const UnsatisfiedItemContainer = ({ unsatisfiedItem }: Props) => {
-  return (
-    <div>
-      <UnsatisfiedItem unsatisfiedItem={unsatisfiedItem} />
-    </div>
-  );
+  return <UnsatisfiedItem unsatisfiedItem={unsatisfiedItem} />;
 };
 
 export default UnsatisfiedItemContainer;
