@@ -4,18 +4,24 @@ import ic_close from '../../../../assets/images/ic_close.png';
 import { useState } from 'react';
 
 import { text } from 'stream/consumers';
-import type { VoidFunction } from '@typedef/components/Request/request.types';
+import type {
+  VoidFunction,
+  EChange,
+} from '@typedef/components/Request/request.types';
 
 type Props = {
   onRejectToggle: VoidFunction;
   onToggle: VoidFunction;
+  value: string;
+  onChangeValue: any;
 };
 
-const RejectPop = ({ onRejectToggle, onToggle }: Props) => {
-  const [value, setValue] = useState('');
-  const onChangeValue = (e: any) => {
-    setValue(e.target.value);
-  };
+const RejectPop = ({
+  onRejectToggle,
+  onToggle,
+  value,
+  onChangeValue,
+}: Props) => {
   return (
     <div className='reject-background'>
       <div className='reject-container'>

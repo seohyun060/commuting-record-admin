@@ -21,6 +21,7 @@
   height: 32px;
   font-weight: bolder;
   border-radius: 6px;
+  background-color: #fff;
 }
 .Paginate span {
   font-size: 15px;

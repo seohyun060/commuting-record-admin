@@ -8,10 +8,8 @@
   letter-spacing: normal;
   text-align: left;
 }
-.day {
-  &-number {
-    margin-top: 8px;
-  }
+
+.day-now-sun {
   @include font-style(normal, 16px, normal);
   width: 151px;
   text-align: center;
@@ -19,7 +17,12 @@
   float: left;
   border-style: solid;
   border-color: #e6e6e6;
-  &-time {
+  color: #eb5351;
+  border-width: 0px 1px 1px 1px;
+  .day-number {
+    margin-top: 8px;
+  }
+  .day-time-8 {
     @include font-style(normal, 14px, 2);
     text-align: center;
     width: 135px;
@@ -27,5 +30,38 @@
     margin-top: 16px;
     height: 32px;
     border-radius: 2px;
+    border: solid 1px #60bceb;
+    color: #018ad0;
   }
+  .day-time-4 {
+    @extend .day-time-8;
+    border: solid 1px #eb5351;
+    color: #eb5351;
+  }
+  .day-time-0 {
+    @extend .day-time-8;
+    border: none;
+    color: #999;
+  }
+}
+.day-now-sat {
+  @extend .day-now-sun;
+  color: #515deb;
+  border-width: 0px 1px 1px 0px;
+}
+.day-now-days {
+  @extend .day-now-sat;
+  color: #111;
+}
+.day-not-sun {
+  @extend .day-now-sun;
+  color: #f5a9a8;
+}
+.day-not-sat {
+  @extend .day-now-sat;
+  color: #a8aef5;
+}
+.day-not-days {
+  @extend .day-now-sat;
+  color: #999;
 }

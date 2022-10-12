@@ -26,20 +26,20 @@ const UnsatisfiedContainer = () => {
           (unsatified.name.indexOf(search) &&
             unsatified.nickname.indexOf(search)) !== -1,
       ),
-    [search],
+    [currentPage, search],
   );
   const unsatisfiedItems = useMemo(
     () => filteredPosts.slice(firstIndex, lastIndex),
-    [search],
+    [currentPage, search],
   );
-  const totalPosts = useMemo(() => filteredPosts.length, [search]);
+  const totalPosts = useMemo(() => filteredPosts.length, [currentPage, search]);
 
   const onSearch = useCallback(
     (e: EChange) => {
       console.log(e);
       setsearch(e.target.value);
     },
-    [search],
+    [currentPage, search],
   );
 
   return (

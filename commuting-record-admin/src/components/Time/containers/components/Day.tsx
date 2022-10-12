@@ -4,34 +4,24 @@ import '../../styles/day.style.css';
 import type { Days } from '../../../../typedef/components/Time/time.types';
 
 type Props = {
-  dayColor: string;
-  timeColor?: string;
-  boxBorderWidth: string;
-  timeBorder: string;
   height: string;
   currentMonthDay: Days;
   workTime: string;
+  dayType: string;
+  timeType: string;
 };
 
 const Day = ({
-  dayColor,
-  timeColor,
-  boxBorderWidth,
-  timeBorder,
   height,
   currentMonthDay,
   workTime,
+  dayType,
+  timeType,
 }: Props) => {
   return (
-    <div
-      className='day'
-      style={{ color: dayColor, height: height, borderWidth: boxBorderWidth }}>
+    <div className={`day-${dayType}`} style={{ height: height }}>
       <div className='day-number'>{currentMonthDay.day}</div>
-      <div
-        className='day-time'
-        style={{ border: timeBorder, color: timeColor }}>
-        {workTime}
-      </div>
+      <div className={`day-time-${timeType}`}>{workTime}</div>
     </div>
   );
 };

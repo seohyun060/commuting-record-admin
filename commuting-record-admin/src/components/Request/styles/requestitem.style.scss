@@ -36,11 +36,23 @@
     width: 180px;
     margin-left: 80px;
   }
-  &-state {
+  &-wait {
     width: 52px;
     margin-left: 80px;
     text-align: center;
     font-size: 14px;
     border-radius: 2px;
+    color: #50b096;
+    background-color: #edf7f4;
+  }
+  &-confirm {
+    @extend .request-item-wait;
+    color: #515deb;
+    background-color: #edeefd;
+  }
+  &-deny {
+    @extend .request-item-wait;
+    color: #eb5351;
+    background-color: #fdeded;
   }
 }

@@ -1,61 +1,36 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import './styles/Pagination.css';
-import type { SetStateNumber } from '@typedef/components/Request/request.types';
+import type {
+  SetStateNumber,
+  VoidFunction,
+} from '@typedef/common/common.types';
 type Props = {
-  totalPosts: number;
-  setCurrentPage: SetStateNumber;
   currentPage: number;
+  firstNumber: number;
+  lastNumber: number;
+  pageNumbers: number[];
+  pageGroup: number;
+  setpageGroup: SetStateNumber;
+  lastPageGroup: number;
+  totalPage: number;
+  onMoveLeft: VoidFunction;
+  onMoveRight: VoidFunction;
+  onButtonClick: (pageNumber: number) => void;
 };
-const Pagination = ({ totalPosts, setCurrentPage, currentPage }: Props) => {
-  const pageNumbers: number[] = [];
-  let left = '<';
-  let right = '>';
-  for (let i = 1; i <= Math.ceil(totalPosts / 13); i++) {
-    pageNumbers.push(i);
-  }
-  const pageCount = 5;
-  const totalPage = pageNumbers.length;
-  let lastPageGroup = Math.ceil(totalPage / pageCount);
 
-  const [pageGroup, setpageGroup] = useState(
-    Math.ceil(currentPage / pageCount),
-  );
-
-  let lastNumber = pageGroup * pageCount;
-  if (lastNumber > totalPage) {
-    lastNumber = totalPage;
-  }
-
-  let firstNumber = pageGroup * pageCount - 4;
-
-  const onMoveLeft = () => {
-    if (pageGroup !== 1) {
-      setpageGroup((prev) => prev - 1);
-      if (currentPage < 6) {
-        setCurrentPage(1);
-      } else {
-        setCurrentPage(currentPage - 5);
-      }
-    }
-  };
-
-  const onMoveRight = () => {
-    if (pageGroup !== lastPageGroup) {
-      setpageGroup((prev) => prev + 1);
-      if (currentPage > totalPage - 5) {
-        setCurrentPage(totalPage);
-      } else {
-        setCurrentPage(currentPage + 5);
-      }
-    }
-
-    console.log(currentPage);
-  };
-  const onButtonClick = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
-    console.log(pageNumber, currentPage);
-  };
-
+const Pagination = ({
+  currentPage,
+  firstNumber,
+  lastNumber,
+  pageNumbers,
+  pageGroup,
+  setpageGroup,
+  lastPageGroup,
+  totalPage,
+  onMoveLeft,
+  onMoveRight,
+  onButtonClick,
+}: Props) => {
   return (
     <div
       className='Paginate'
@@ -67,10 +42,9 @@ const Pagination = ({ totalPosts, setCurrentPage, currentPage }: Props) => {
         className='Move'
         onClick={onMoveLeft}
         style={{
-          backgroundColor: '#fff',
           color: pageGroup !== 1 ? '#111' : '#efeff2',
         }}>
-        {left}
+        {'<'}
       </button>
       {pageGroup !== 1 ? (
         <div>
@@ -97,7 +71,6 @@ const Pagination = ({ totalPosts, setCurrentPage, currentPage }: Props) => {
             }}
             className='Number'
             onClick={() => {
-              // setCurrentPage(pageNumber);
               onButtonClick(pageNumber);
             }}>
             {pageNumber}
@@ -125,10 +98,9 @@ const Pagination = ({ totalPosts, setCurrentPage, currentPage }: Props) => {
         className='Move'
         onClick={onMoveRight}
         style={{
-          backgroundColor: '#fff',
           color: pageGroup !== lastPageGroup ? '#111' : '#efeff2',
         }}>
-        {right}
+        {'>'}
       </button>
     </div>
   );

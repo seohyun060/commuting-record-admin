@@ -6,11 +6,7 @@ type Props = {
 };
 
 const WorkContainer = ({ weekWork, index }: Props) => {
-  return (
-    <div>
-      <Work weekWork={weekWork} index={index} />
-    </div>
-  );
+  return <Work weekWork={weekWork} index={index} />;
 };
 
 export default WorkContainer;

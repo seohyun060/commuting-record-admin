@@ -1,33 +1,64 @@
-import React from 'react';
 import Time from '../Time';
-import { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 type Days = {
   day: number;
   now: boolean;
   time: number;
 };
 type Props = {};
-
+const week = ['일', '월', '화', '수', '목', '금', '토']; //일주일
+const today = {
+  year: new Date().getFullYear(), //오늘 연도
+  month: new Date().getMonth() + 1, //오늘 월
+  date: new Date().getDate(), //오늘 날짜
+  day: new Date().getDay(), //오늘 요일
+};
 const TimeContainer = (props: Props) => {
-  const today = {
-    year: new Date().getFullYear(), //오늘 연도
-    month: new Date().getMonth() + 1, //오늘 월
-    date: new Date().getDate(), //오늘 날짜
-    day: new Date().getDay(), //오늘 요일
-  };
-  const week = ['일', '월', '화', '수', '목', '금', '토']; //일주일
   const [selectedYear, setSelectedYear] = useState(today.year); //현재 선택된 연도
   const [selectedMonth, setSelectedMonth] = useState(today.month); //현재 선택된 달
   const [currentMonthDays, setCurrentMonthDays] = useState<Days[]>([]);
-  let dateTotalCount = new Date(selectedYear, selectedMonth, 0).getDate(); //선택된 연도, 달의 마지막 날짜
-  let prevMonthEnd = new Date(selectedYear, selectedMonth - 1, 0).getDate();
-  let prevMonthStart =
-    prevMonthEnd - new Date(selectedYear, selectedMonth - 1, 1).getDay() + 1;
-  let nextMonthDays = 7 - new Date(selectedYear, selectedMonth, 0).getDay();
-  let weekWork: number[] = [];
-  let weekWorkTime: number = 0;
-  let dayLength =
-    prevMonthEnd - prevMonthStart + dateTotalCount + nextMonthDays;
+
+  const dateTotalCount = useMemo(
+    () => new Date(selectedYear, selectedMonth, 0).getDate(),
+    [selectedMonth, selectedYear],
+  );
+  const prevMonthEnd = useMemo(
+    () => new Date(selectedYear, selectedMonth - 1, 0).getDate(),
+    [selectedMonth, selectedYear],
+  );
+  const prevMonthStart = useMemo(
+    () =>
+      prevMonthEnd - new Date(selectedYear, selectedMonth - 1, 1).getDay() + 1,
+    [selectedMonth, selectedYear],
+  );
+  const nextMonthDays = useMemo(
+    () => 7 - new Date(selectedYear, selectedMonth, 0).getDay(),
+    [selectedMonth, selectedYear],
+  );
+  const dayLength = useMemo(
+    () => prevMonthEnd - prevMonthStart + dateTotalCount + nextMonthDays,
+    [selectedMonth, selectedYear],
+  );
+
+  const weekWork = useMemo(() => {
+    let weekWork = [];
+    let workTime = 0;
+    for (let i = 0; i < dayLength; i++) {
+      if (currentMonthDays[i]) {
+        workTime += currentMonthDays[i].time;
+        if (i % 6 === 0 && i !== 0) {
+          if (workTime === 0) {
+            workTime = 40;
+          }
+          weekWork.push(workTime);
+          console.log(i);
+          workTime = 0;
+        }
+      }
+    }
+    return weekWork;
+  }, [currentMonthDays]);
+
   const prevMonth = useCallback(() => {
     if (selectedMonth === 1) {
       setSelectedMonth(12);
@@ -35,7 +66,7 @@ const TimeContainer = (props: Props) => {
     } else {
       setSelectedMonth(selectedMonth - 1);
     }
-  }, [selectedMonth]);
+  }, [selectedMonth, selectedYear]);
 
   const nextMonth = useCallback(() => {
     if (selectedMonth === 12) {
@@ -44,11 +75,10 @@ const TimeContainer = (props: Props) => {
     } else {
       setSelectedMonth(selectedMonth + 1);
     }
-  }, [selectedMonth]);
+  }, [selectedMonth, selectedYear]);
 
   const onSetCurrentMonthDays = useCallback(() => {
     setCurrentMonthDays([]);
-    weekWork = [];
     for (let i = prevMonthStart; i <= prevMonthEnd; i++) {
       let tempTime;
       if (i === prevMonthStart) {
@@ -89,10 +119,6 @@ const TimeContainer = (props: Props) => {
     }
   }, [selectedMonth]);
 
-  useEffect(() => {
-    onSetCurrentMonthDays();
-  }, [selectedMonth]);
-
   const returnWeek = useCallback(() => {
     let weekArr: any[] = [];
     let dayv: string;
@@ -113,19 +139,10 @@ const TimeContainer = (props: Props) => {
     return weekArr;
   }, []);
 
-  for (let i = 0; i < dayLength; i++) {
-    if (currentMonthDays[i]) {
-      weekWorkTime += currentMonthDays[i].time;
-      if (i % 6 === 0 && i !== 0) {
-        if (weekWorkTime === 0) {
-          weekWorkTime = 40;
-        }
-        weekWork.push(weekWorkTime);
-        console.log(i);
-        weekWorkTime = 0;
-      }
-    }
-  }
+  useEffect(() => {
+    onSetCurrentMonthDays();
+  }, [selectedMonth]);
+
   return (
     <Time
       prevMonth={prevMonth}

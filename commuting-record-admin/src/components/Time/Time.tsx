@@ -1,8 +1,6 @@
 import GnbContainer from '@components/Gnb/containers/GnbContainer';
 import Header from '@components/Header/Header';
-import React from 'react';
 import './styles/time.style.css';
-import { useState, useEffect, useCallback } from 'react';
 import DayContainer from './containers/DayContainer';
 import WorkContainer from './containers/WorkContainer';
 import type { Days } from '../../typedef/components/Time/time.types';
@@ -26,9 +24,6 @@ const Time = ({
   currentMonthDays,
   weekWork,
 }: Props) => {
-  let left = '<';
-  let right = '>';
-
   return (
     <div className='entire'>
       <Header title='예정시간 조정' />
@@ -38,7 +33,7 @@ const Time = ({
           <div className='month-container'>
             <button onClick={prevMonth}>{'<'}</button>
             {selectedYear}년 {selectedMonth}월
-            <button onClick={nextMonth}>{right}</button>
+            <button onClick={nextMonth}>{'>'}</button>
           </div>
           <div className='calendar'>
             <div className='calendar-days'>

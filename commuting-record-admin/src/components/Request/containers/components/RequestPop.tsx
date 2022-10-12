@@ -3,28 +3,29 @@ import '../../styles/requestpop.style.css';
 import ic_close from '../../../../assets/images/ic_close.png';
 import RejectPop from './RejectPop';
 import { useState } from 'react';
+import type { RequestData } from '@typedef/components/Request/request.types';
 import type {
   SetStateBoolean,
-  RequestData,
-} from '@typedef/components/Request/request.types';
+  VoidFunction,
+} from '@typedef/common/common.types';
 import RejectPopContainer from '../RejectPopContainer';
 type Props = {
-  settoggle: SetStateBoolean;
   clickeditem: RequestData;
   vacation: string;
   timeCheck: string;
+  rejectToggle: boolean;
+  onToggle: VoidFunction;
+  onRejectToggle: VoidFunction;
 };
 
-const RequestPop = ({ settoggle, clickeditem, vacation, timeCheck }: Props) => {
-  const onToggle = () => {
-    settoggle((prev) => !prev);
-  };
-
-  const [rejectToggle, setRejectToggle] = useState(false);
-  const onRejectToggle = useCallback(() => {
-    setRejectToggle((prev) => !prev);
-  }, []);
-
+const RequestPop = ({
+  clickeditem,
+  vacation,
+  timeCheck,
+  rejectToggle,
+  onToggle,
+  onRejectToggle,
+}: Props) => {
   return (
     <div className='container-background'>
       <div className='pop-container'>

@@ -37,10 +37,20 @@
   width: 180px;
   margin-left: 80px;
 }
-.request-item-state {
+.request-item-wait, .request-item-deny, .request-item-confirm {
   width: 52px;
   margin-left: 80px;
   text-align: center;
   font-size: 14px;
   border-radius: 2px;
+  color: #50b096;
+  background-color: #edf7f4;
+}
+.request-item-confirm {
+  color: #515deb;
+  background-color: #edeefd;
+}
+.request-item-deny {
+  color: #eb5351;
+  background-color: #fdeded;
 }/*# sourceMappingURL=requestitem.style.css.map */

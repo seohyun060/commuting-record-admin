@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import RequestItem from './components/RequestItem';
 import type {
   RequestData,
@@ -16,29 +16,31 @@ const RequestItemContainer = ({
   settoggle,
   onRequestItemClick: onRequestItemClick,
 }: Props) => {
-  let color = '';
-  let backgroundColor = '';
+  const [stateName, setStateName] = useState('');
 
-  if (requestItem.rState === '대기중') {
-    color = '#50b096';
-    backgroundColor = '#edf7f4';
-  } else if (requestItem.rState === '결제') {
-    color = '#515deb';
-    backgroundColor = '#edeefd';
-  } else {
-    color = '#eb5351';
-    backgroundColor = '#fdeded';
-  }
+  const onToggle = useCallback(() => {
+    onRequestItemClick(requestItem);
+    if (requestItem.rState === '대기중') {
+      settoggle((prev) => !prev);
+    }
+  }, [requestItem]);
+
+  useEffect(() => {
+    if (requestItem.rState === '대기중') {
+      setStateName('wait');
+    } else if (requestItem.rState === '결제') {
+      setStateName('confirm');
+    } else {
+      setStateName('deny');
+    }
+  }, [requestItem]);
+
   return (
-    <div>
-      <RequestItem
-        requestItem={requestItem}
-        settoggle={settoggle}
-        color={color}
-        backgroundColor={backgroundColor}
-        onRequestItemClick={onRequestItemClick}
-      />
-    </div>
+    <RequestItem
+      requestItem={requestItem}
+      stateName={stateName}
+      onToggle={onToggle}
+    />
   );
 };
 

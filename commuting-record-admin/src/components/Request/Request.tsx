@@ -24,6 +24,8 @@ type Props = {
   setCurrentPage: SetStateNumber;
   requestItems: RequestData[];
   totalPosts: number;
+  clickedItem: RequestData;
+  onRequestItemClick: (requestItem: RequestData) => void;
 };
 
 const Request = ({
@@ -35,20 +37,9 @@ const Request = ({
   setCurrentPage,
   requestItems,
   totalPosts,
+  clickedItem,
+  onRequestItemClick,
 }: Props) => {
-  const [clickedItem, setClickedItem] = useState({
-    name: '',
-    nickName: '',
-    rType: '',
-    rTime: '',
-    rdate: '',
-    rState: '',
-  });
-
-  const onRequestItemClick = (requestItem: RequestData) => {
-    setClickedItem(requestItem);
-  };
-
   return (
     <div className='entire'>
       {toggle && (

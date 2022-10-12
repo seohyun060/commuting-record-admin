@@ -1,4 +1,4 @@
-.day {
+.day-now-sun, .day-not-sun, .day-now-sat, .day-not-days, .day-not-sat, .day-now-days {
   font-family: Pretendard;
   font-size: 16px;
   font-weight: normal;
@@ -13,11 +13,13 @@
   float: left;
   border-style: solid;
   border-color: #e6e6e6;
+  color: #eb5351;
+  border-width: 0px 1px 1px 1px;
 }
-.day-number {
+.day-now-sun .day-number, .day-not-sun .day-number, .day-now-sat .day-number, .day-not-days .day-number, .day-not-sat .day-number, .day-now-days .day-number {
   margin-top: 8px;
 }
-.day-time {
+.day-now-sun .day-time-8, .day-not-sun .day-time-8, .day-now-sat .day-time-8, .day-not-days .day-time-8, .day-not-sat .day-time-8, .day-now-days .day-time-8, .day-now-sun .day-time-0, .day-not-sun .day-time-0, .day-now-sat .day-time-0, .day-not-days .day-time-0, .day-not-sat .day-time-0, .day-now-days .day-time-0, .day-now-sun .day-time-4, .day-not-sun .day-time-4, .day-now-sat .day-time-4, .day-not-days .day-time-4, .day-not-sat .day-time-4, .day-now-days .day-time-4 {
   font-family: Pretendard;
   font-size: 14px;
   font-weight: normal;
@@ -32,4 +34,35 @@
   margin-top: 16px;
   height: 32px;
   border-radius: 2px;
+  border: solid 1px #60bceb;
+  color: #018ad0;
+}
+.day-now-sun .day-time-4, .day-not-sun .day-time-4, .day-now-sat .day-time-4, .day-not-days .day-time-4, .day-not-sat .day-time-4, .day-now-days .day-time-4 {
+  border: solid 1px #eb5351;
+  color: #eb5351;
+}
+.day-now-sun .day-time-0, .day-not-sun .day-time-0, .day-now-sat .day-time-0, .day-not-days .day-time-0, .day-not-sat .day-time-0, .day-now-days .day-time-0 {
+  border: none;
+  color: #999;
+}
+
+.day-now-sat, .day-not-days, .day-not-sat, .day-now-days {
+  color: #515deb;
+  border-width: 0px 1px 1px 0px;
+}
+
+.day-now-days {
+  color: #111;
+}
+
+.day-not-sun {
+  color: #f5a9a8;
+}
+
+.day-not-sat {
+  color: #a8aef5;
+}
+
+.day-not-days {
+  color: #999;
 }/*# sourceMappingURL=day.style.css.map */
